@@ -61,5 +61,3 @@ Deploy easily on [Vercel](https://vercel.com/) or your preferred platform:
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize this portfolio to fit your needs!
