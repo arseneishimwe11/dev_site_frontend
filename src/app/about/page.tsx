@@ -32,7 +32,7 @@ export default function AboutPage() {
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                TypeScript and React are my go-to technologies. I love how they help me write 
+                TypeScript, Java and Go are my go-to technologies. I love how they help me write 
                 clean, efficient code while catching potential issues early in development.
               </p>
               
