@@ -42,8 +42,8 @@ export default function AboutPage() {
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Currently, I work as a software engineer at Your Company, building innovative 
-                software solutions, and also serve as a consultant for various tech projects.
+                Currently, I am working on various personal projects, building innovative 
+                software solutions, and also serving as a consultant for various tech projects.
               </p>
             </div>
             
