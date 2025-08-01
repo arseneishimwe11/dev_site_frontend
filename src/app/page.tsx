@@ -4,16 +4,16 @@ import WorkExperience from "@/components/WorkExperience";
 
 const recentArticles = [
   {
-    title: "Maximizing JavaScript Efficiency: Exploring the Advantages of .mjs Files",
-    description: "In this article, we'll explore the advantages of .mjs files and how they can help you maximize your JavaScript efficiency, improve performance, scope resolution, easy tree shaking, and many more",
-    date: "October 16, 2023",
-    href: "/articles/mjs-files"
+    title: "Building Scalable Backends: NestJS Microservices Architecture Deep Dive",
+    description: "Explore how to design robust, decoupled systems with NestJS microservices. This guide walks through communication patterns, scalability concerns, and real-world examples of modular service design.",
+    date: "March 1, 2025",
+    href: "/articles/nestjs-microservices"
   },
   {
-    title: "Introducing react-swift-reveal: a library for animating elements as they enter the viewport",
-    description: "The easiest way to add reveal animations to your React applications as the elements enter viewport. It includes both on scroll and simple reveal animations.",
-    date: "October 4, 2023",
-    href: "/articles/react-swift-reveal"
+    title: "Secrets in Transit: How Zero-Knowledge Sharing Actually Works",
+    description: "Understand the fundamentals of zero-knowledge secret sharing — from ephemeral encryption, secure storage, to how Vaultify leverages Go, Redis, and gRPC to share sensitive data safely.",
+    date: "July 24, 2024",
+    href: "/articles/zero-knowledge-sharing"
   }
 ];
 
