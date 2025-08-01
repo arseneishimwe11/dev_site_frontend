@@ -11,119 +11,196 @@ const socialLinks = [
   { icon: Linkedin, href: "#", label: "Follow on LinkedIn", color: "hover:text-blue-600", bg: "hover:bg-blue-50 dark:hover:bg-blue-950/20" },
 ]
 
-// Modern Geometric Grid Background
-const ModernGrid = () => {
+// Fancy Irregular Pattern Background
+const FancyPatternBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Main grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
+      {/* Sophisticated grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="modernGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <rect width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1"/>
+            <pattern id="hexGrid" width="60" height="52" patternUnits="userSpaceOnUse">
+              <path d="M30 0 L45 13 L45 39 L30 52 L15 39 L15 13 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#modernGrid)" className="text-foreground" />
+          <rect width="100%" height="100%" fill="url(#hexGrid)" className="text-foreground" />
         </svg>
       </div>
       
-      {/* Subtle animated squares */}
+      {/* Animated hexagonal shapes */}
       <motion.div
-        className="absolute top-20 left-20 w-4 h-4 bg-blue-500/10 dark:bg-blue-400/5 rounded-sm"
+        className="absolute top-16 left-20"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3],
+          rotate: [0, 120, 240, 360],
+          scale: [1, 1.1, 1],
+          opacity: [0.4, 0.7, 0.4],
         }}
         transition={{
-          duration: 4,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-      />
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" className="text-blue-500/20 dark:text-blue-400/15">
+          <path d="M12 2 L17.5 6.5 L17.5 17.5 L12 22 L6.5 17.5 L6.5 6.5 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Organic blob shapes */}
       <motion.div
-        className="absolute top-40 right-32 w-3 h-3 bg-purple-500/10 dark:bg-purple-400/5 rounded-sm"
+        className="absolute top-32 right-24"
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.5, 0.2],
+          rotate: [0, -90, -180, -270, -360],
+          scale: [1, 1.2, 0.9, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3],
         }}
         transition={{
-          duration: 6,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 1,
         }}
-      />
+      >
+        <svg width="32" height="32" viewBox="0 0 32 32" className="text-purple-500/15 dark:text-purple-400/12">
+          <path d="M16,4 C20,4 24,8 28,12 C24,16 20,20 16,20 C12,20 8,16 4,12 C8,8 12,4 16,4 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Triangle clusters */}
       <motion.div
-        className="absolute bottom-32 left-32 w-5 h-5 bg-indigo-500/10 dark:bg-indigo-400/5 rounded-sm"
+        className="absolute bottom-24 left-16"
         animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.25, 0.55, 0.25],
+          rotate: [0, 60, 120, 180, 240, 300, 360],
+          scale: [1, 1.15, 1],
+          opacity: [0.35, 0.65, 0.35],
         }}
         transition={{
-          duration: 5,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 2,
         }}
-      />
+      >
+        <svg width="28" height="28" viewBox="0 0 28 28" className="text-indigo-500/18 dark:text-indigo-400/14">
+          <path d="M14 2 L26 22 L2 22 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Diamond shapes */}
       <motion.div
-        className="absolute bottom-20 right-20 w-3 h-3 bg-blue-500/10 dark:bg-blue-400/5 rounded-sm"
+        className="absolute bottom-32 right-28"
         animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.3, 0.6, 0.3],
+          rotate: [0, 45, 90, 135, 180, 225, 270, 315, 360],
+          scale: [1, 1.08, 1.2, 1.08, 1],
+          opacity: [0.4, 0.7, 0.4],
         }}
         transition={{
-          duration: 7,
+          duration: 14,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 3,
         }}
-      />
-      
-      {/* Large background squares for depth */}
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" className="text-blue-500/16 dark:text-blue-400/12">
+          <path d="M10 2 L18 10 L10 18 L2 10 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Abstract curved shapes */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-500/5 to-purple-500/5 dark:from-blue-400/3 dark:to-purple-400/3 rounded-2xl"
+        className="absolute top-1/2 left-8"
+        animate={{
+          rotate: [0, -45, -90, -135, -180],
+          scale: [1, 1.3, 1, 1.15, 1],
+          opacity: [0.25, 0.5, 0.25],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 4,
+        }}
+      >
+        <svg width="36" height="36" viewBox="0 0 36 36" className="text-purple-500/12 dark:text-purple-400/10">
+          <path d="M6 18 Q18 6 30 18 Q18 30 6 18" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Large decorative hexagon */}
+      <motion.div
+        className="absolute top-1/4 left-1/3 w-40 h-40 opacity-[0.02] dark:opacity-[0.05]"
         animate={{
           rotate: [0, 360],
           scale: [1, 1.05, 1],
         }}
         transition={{
-          duration: 20,
+          duration: 30,
           repeat: Infinity,
           ease: "linear",
         }}
-      />
+      >
+        <svg width="100%" height="100%" viewBox="0 0 100 100" className="text-blue-500">
+          <path d="M50 5 L85 27.5 L85 72.5 L50 95 L15 72.5 L15 27.5 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+
+      {/* Large decorative organic shape */}
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-br from-indigo-500/5 to-pink-500/5 dark:from-indigo-400/3 dark:to-pink-400/3 rounded-2xl"
+        className="absolute bottom-1/3 right-1/4 w-32 h-32 opacity-[0.015] dark:opacity-[0.04]"
         animate={{
           rotate: [360, 0],
-          scale: [1, 1.1, 1],
+          scale: [1, 1.08, 1],
         }}
         transition={{
-          duration: 25,
+          duration: 35,
           repeat: Infinity,
           ease: "linear",
         }}
-      />
+      >
+        <svg width="100%" height="100%" viewBox="0 0 100 100" className="text-indigo-500">
+          <path d="M50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 C30,90 10,70 10,50 C10,30 30,10 50,10 Z" fill="currentColor"/>
+          <path d="M50,20 C60,25 70,35 75,45 C70,55 60,65 50,70 C40,65 30,55 25,45 C30,35 40,25 50,20 Z" fill="none" stroke="currentColor" strokeWidth="1"/>
+        </svg>
+      </motion.div>
     </div>
   )
 }
 
-// Typewriter Effect Component
-const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) => {
+// Dynamic Cycling Text Component
+const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: number }) => {
   const [displayText, setDisplayText] = useState("")
+  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
+    const currentSentence = sentences[currentSentenceIndex]
+    
     const timeout = setTimeout(() => {
-      if (currentIndex < text.length) {
-        setDisplayText(prev => prev + text[currentIndex])
-        setCurrentIndex(prev => prev + 1)
+      if (!isDeleting) {
+        // Typing
+        if (currentIndex < currentSentence.length) {
+          setDisplayText(prev => prev + currentSentence[currentIndex])
+          setCurrentIndex(prev => prev + 1)
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 1500)
+        }
+      } else {
+        // Deleting
+        if (displayText.length > 0) {
+          setDisplayText(prev => prev.slice(0, -1))
+        } else {
+          // Move to next sentence
+          setIsDeleting(false)
+          setCurrentIndex(0)
+          setCurrentSentenceIndex(prev => (prev + 1) % sentences.length)
+        }
       }
-    }, delay + currentIndex * 80)
+    }, delay + (isDeleting ? 20 : 40)) // Much faster typing and deleting
 
     return () => clearTimeout(timeout)
-  }, [currentIndex, delay, text])
+  }, [currentIndex, displayText, isDeleting, currentSentenceIndex, sentences, delay])
 
   return (
     <span className="relative">
@@ -140,10 +217,18 @@ const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) =
 }
 
 export default function HeroSection() {
+  const cyclingTexts = [
+    "Experiences",
+    "Solutions", 
+    "Applications",
+    "Interfaces",
+    "Products"
+  ]
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Modern Grid Background */}
-      <ModernGrid />
+      {/* Fancy Pattern Background */}
+      <FancyPatternBackground />
 
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-indigo-50/30 dark:from-blue-950/10 dark:via-transparent dark:to-indigo-950/10" />
@@ -207,7 +292,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <TypewriterText text="Experiences" delay={1000} />
+                <CyclingText sentences={cyclingTexts} delay={500} />
               </motion.span>
             </h1>
           </motion.div>
@@ -219,11 +304,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1 }}
             className="mb-12"
           >
-            <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light fredericka-the-great-regular">
               Software Engineer & Creative Developer
             </p>
             <motion.p 
-              className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mt-4 leading-relaxed"
+              className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mt-4 leading-relaxed font-mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.3 }}
@@ -279,7 +364,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.7 }}
-            className="flex items-center justify-center space-x-6"
+            className="flex relative items-center justify-center space-x-6"
           >
             {socialLinks.map((social, index) => (
               <motion.a
@@ -313,7 +398,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 2.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-1 items-center justify-center transform -translate-x-1/2"
       >
         <motion.div 
           className="flex flex-col items-center space-y-3 cursor-pointer group"
