@@ -112,6 +112,7 @@ export default function AboutPage() {
                   <div className="aspect-square w-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-1">
                     <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-700 rounded-xl flex items-center justify-center">
                       <Code2 className="h-20 w-20 text-white/80" />
+                      
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl" />

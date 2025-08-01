@@ -71,7 +71,7 @@ export default function Navigation() {
                 </div>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-50 blur-sm -z-10 group-hover:opacity-75 transition-opacity" />
               </div>
-              <span className="font-display font-bold text-lg gradient-text hidden sm:block">Portfolio</span>
+              <span className="font-display font-bold text-lg gradient-text hidden sm:block">IsArsene</span>
             </Link>
 
             {/* Desktop Navigation Links */}
