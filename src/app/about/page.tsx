@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail, Code2, Coffee, Music, Sparkles, MapPin, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Follow on Twitter", color: "hover:text-blue-400", bgColor: "hover:bg-blue-400/10" },
@@ -107,16 +108,121 @@ export default function AboutPage() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="lg:col-span-1"
             >
-              <div className="glass-card p-6 rounded-3xl h-full">
-                <div className="relative group">
-                  <div className="aspect-square w-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-1">
-                    <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-700 rounded-xl flex items-center justify-center">
-                      <Code2 className="h-20 w-20 text-white/80" />
+              <div className="glass-card p-8 rounded-3xl h-full flex flex-col items-center justify-center">
+                <div className="relative group mb-6">
+                  {/* Gradient border container */}
+                  <div className="relative p-1 rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-xl dark:shadow-2xl shadow-blue-500/20 dark:shadow-blue-500/40">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        rotateY: 5,
+                        rotateX: 5,
+                      }}
+                      transition={{ 
+                        duration: 0.6, 
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 20
+                      }}
+                      className="relative bg-background rounded-[calc(1.5rem-4px)] p-4 overflow-hidden"
+                    >
+                      {/* Image container */}
+                      <div className="relative">
+                        <Image
+                          src="/pic_pp.png"
+                          alt="Arsene Ishimwe - Software Engineer"
+                          width={280}
+                          height={280}
+                          className="rounded-2xl object-cover w-full h-auto shadow-lg"
+                          priority
+                        />
+                        
+                        {/* Hover overlay effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-purple-500/15 to-pink-500/15 dark:from-blue-500/10 dark:via-purple-500/10 dark:to-pink-500/10 rounded-2xl opacity-0 group-hover:opacity-100"
+                          transition={{ duration: 0.3 }}
+                        />
+                      </div>
                       
-                    </div>
+                      {/* Floating particles effect - Enhanced for light mode */}
+                      <motion.div
+                        className="absolute top-4 right-4 w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full opacity-0 group-hover:opacity-80 dark:group-hover:opacity-60 shadow-lg shadow-blue-500/50"
+                        animate={{ 
+                          y: [0, -10, 0],
+                          scale: [1, 1.2, 1]
+                        }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                      <motion.div
+                        className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-purple-500 dark:bg-purple-400 rounded-full opacity-0 group-hover:opacity-70 dark:group-hover:opacity-40 shadow-lg shadow-purple-500/50"
+                        animate={{ 
+                          y: [0, -8, 0],
+                          scale: [1, 1.1, 1]
+                        }}
+                        transition={{ 
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 0.5
+                        }}
+                      />
+                      
+                      {/* Additional light mode particle */}
+                      <motion.div
+                        className="absolute top-1/2 right-2 w-1 h-1 bg-indigo-500 dark:bg-indigo-400 rounded-full opacity-0 group-hover:opacity-60 dark:group-hover:opacity-30 shadow-sm shadow-indigo-500/50"
+                        animate={{ 
+                          x: [0, -5, 0],
+                          opacity: [0, 0.6, 0]
+                        }}
+                        transition={{ 
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 1
+                        }}
+                      />
+                    </motion.div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl" />
+                  
+                  {/* Ambient glow effect - Enhanced for light mode */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-15 dark:opacity-20 blur-xl -z-10 group-hover:opacity-30 dark:group-hover:opacity-40 transition-opacity duration-500" />
                 </div>
+
+                {/* Name and title section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="text-center"
+                >
+                  <h3 className="text-2xl font-display font-bold mb-2 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                    Arsene Ishimwe
+                  </h3>
+                  <p className="text-muted-foreground font-medium mb-3 text-gray-600 dark:text-gray-400">
+                    Software Engineer & Creative Developer
+                  </p>
+                  
+                  {/* Status badge */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/15 dark:bg-green-500/10 text-green-700 dark:text-green-400 text-sm font-medium border border-green-500/20 dark:border-green-500/10"
+                  >
+                    <motion.div
+                      className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full shadow-sm shadow-green-500/50"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                    Available for projects
+                  </motion.div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
