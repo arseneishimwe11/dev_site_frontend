@@ -312,7 +312,7 @@ export default function AboutPage() {
                   className="px-8 py-4 text-lg font-semibold rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-glow transition-all duration-300 hover:scale-105"
                   asChild
                 >
-                  <a href="mailto:your.email@example.com" className="inline-flex items-center">
+                  <a href="mailto:ishimwearsene11@gmail.com" className="inline-flex items-center">
                     <Mail className="mr-3 h-5 w-5" />
                     your.email@example.com
                   </a>

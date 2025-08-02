@@ -3,7 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Your Name - Software Engineer & Designer",
+  title: "Ishimwe Arsene - Software Engineer & Designer",
   description: "Personal portfolio showcasing software engineering projects and design work",
 };
 
