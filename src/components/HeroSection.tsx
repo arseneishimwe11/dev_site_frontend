@@ -184,7 +184,7 @@ const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: nu
           setCurrentIndex(prev => prev + 1)
         } else {
           // Pause before deleting
-          setTimeout(() => setIsDeleting(true), 1500)
+          setTimeout(() => setIsDeleting(true), 1200)
         }
       } else {
         // Deleting
@@ -197,7 +197,7 @@ const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: nu
           setCurrentSentenceIndex(prev => (prev + 1) % sentences.length)
         }
       }
-    }, delay + (isDeleting ? 20 : 40)) // Much faster typing and deleting
+    }, delay + (isDeleting ? 15 : 30)) // Super fast typing and deleting
 
     return () => clearTimeout(timeout)
   }, [currentIndex, displayText, isDeleting, currentSentenceIndex, sentences, delay])
@@ -292,7 +292,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <CyclingText sentences={cyclingTexts} delay={500} />
+                <CyclingText sentences={cyclingTexts} delay={200} />
               </motion.span>
             </h1>
           </motion.div>
