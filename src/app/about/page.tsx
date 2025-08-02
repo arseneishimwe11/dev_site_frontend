@@ -314,7 +314,7 @@ export default function AboutPage() {
                 >
                   <a href="mailto:ishimwearsene11@gmail.com" className="inline-flex items-center">
                     <Mail className="mr-3 h-5 w-5" />
-                    your.email@example.com
+                    ishimwearsene11@gmail.com
                   </a>
                 </Button>
               </div>
