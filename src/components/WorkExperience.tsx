@@ -38,7 +38,7 @@ export default function WorkExperience() {
     >
       <h3 className="text-lg font-semibold mb-4 flex items-center">
         <div className="h-5 w-5 rounded bg-primary mr-2"></div>
-        Work
+        Experience
       </h3>
       
       <div className="space-y-4">
