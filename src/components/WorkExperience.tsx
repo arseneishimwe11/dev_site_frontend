@@ -12,18 +12,18 @@ interface WorkExperienceItem {
 
 const workExperience: WorkExperienceItem[] = [
   {
-    company: "Your Current Company",
-    position: "Senior Software Engineer",
+    company: "MT",
+    position: "Lead Backend Engineer",
     duration: "Jan 2024 — Present",
   },
   {
-    company: "Previous Company",
-    position: "Software Engineer",
+    company: "Sphere News",
+    position: "Backend Developer & Project Collaborator",
     duration: "Mar 2022 — Dec 2023",
   },
   {
-    company: "Another Company",
-    position: "Frontend Developer",
+    company: "SalesPro",
+    position: "Full Stack Developer",
     duration: "Oct 2020 — Feb 2022",
   },
 ]
