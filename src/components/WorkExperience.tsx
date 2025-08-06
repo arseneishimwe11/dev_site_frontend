@@ -14,7 +14,7 @@ const workExperience: WorkExperienceItem[] = [
   {
     company: "MT",
     position: "Lead Backend Engineer",
-    duration: "Jan 2024 — Present",
+    duration: "2024 - 2025",
   },
   {
     company: "Sphere News",
