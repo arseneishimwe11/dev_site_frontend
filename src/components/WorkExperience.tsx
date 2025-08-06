@@ -19,12 +19,12 @@ const workExperience: WorkExperienceItem[] = [
   {
     company: "Sphere News",
     position: "Backend Developer & Project Collaborator",
-    duration: "Mar 2022 — Dec 2023",
+    duration: "2024",
   },
   {
     company: "SalesPro",
     position: "Full Stack Developer",
-    duration: "Oct 2020 — Feb 2022",
+    duration: "2023",
   },
 ]
 
