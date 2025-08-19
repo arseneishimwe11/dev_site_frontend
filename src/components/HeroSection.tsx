@@ -166,28 +166,42 @@ const FancyPatternBackground = () => {
   )
 }
 
-// Dynamic Cycling Text Component
+// Dynamic Cycling Text Component with Enhanced Typewriter Effect
 const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: number }) => {
   const [displayText, setDisplayText] = useState("")
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isInitialDelay, setIsInitialDelay] = useState(true)
+
+  // Calculate the longest sentence for consistent width
+  const longestSentence = sentences.reduce((longest, current) =>
+    current.length > longest.length ? current : longest, ""
+  )
 
   useEffect(() => {
+    // Initial delay before starting the typewriter effect
+    if (isInitialDelay) {
+      const initialTimeout = setTimeout(() => {
+        setIsInitialDelay(false)
+      }, delay)
+      return () => clearTimeout(initialTimeout)
+    }
+
     const currentSentence = sentences[currentSentenceIndex]
-    
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing
+        // Typing phase
         if (currentIndex < currentSentence.length) {
           setDisplayText(prev => prev + currentSentence[currentIndex])
           setCurrentIndex(prev => prev + 1)
         } else {
-          // Pause before deleting
-          setTimeout(() => setIsDeleting(true), 1200)
+          // Pause before deleting (longer pause for better readability)
+          setTimeout(() => setIsDeleting(true), 2000)
         }
       } else {
-        // Deleting
+        // Deleting phase
         if (displayText.length > 0) {
           setDisplayText(prev => prev.slice(0, -1))
         } else {
@@ -197,21 +211,34 @@ const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: nu
           setCurrentSentenceIndex(prev => (prev + 1) % sentences.length)
         }
       }
-    }, delay + (isDeleting ? 15 : 30)) // Super fast typing and deleting
+    }, isDeleting ? 50 : 100) // Optimized speeds: 100ms typing, 50ms deleting
 
     return () => clearTimeout(timeout)
-  }, [currentIndex, displayText, isDeleting, currentSentenceIndex, sentences, delay])
+  }, [currentIndex, displayText, isDeleting, currentSentenceIndex, sentences, delay, isInitialDelay])
 
   return (
-    <span className="relative">
-      {displayText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute text-blue-600 dark:text-blue-400"
-      >
-        |
-      </motion.span>
+    <span className="relative inline-block min-w-0">
+      {/* Invisible text to maintain consistent width and prevent layout shifts */}
+      <span className="invisible select-none whitespace-nowrap" aria-hidden="true">
+        {longestSentence}
+      </span>
+
+      {/* Actual typewriter text positioned absolutely */}
+      <span className="absolute inset-0 left-0 top-0 whitespace-nowrap">
+        {displayText}
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{
+            duration: 0.8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "reverse"
+          }}
+          className="text-blue-600 dark:text-blue-400 font-normal ml-1"
+        >
+          |
+        </motion.span>
+      </span>
     </span>
   )
 }
@@ -219,9 +246,9 @@ const CyclingText = ({ sentences, delay = 0 }: { sentences: string[], delay?: nu
 export default function HeroSection() {
   const cyclingTexts = [
     "Experiences",
-    "Solutions", 
     "Applications",
     "Interfaces",
+    "Solutions",
     "Products"
   ]
 
@@ -286,13 +313,13 @@ export default function HeroSection() {
                 Digital
               </motion.span>
               <br />
-              <motion.span 
-                className="inline-block text-foreground"
+              <motion.span
+                className="inline-block text-foreground min-h-[1.2em] flex items-center justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <CyclingText sentences={cyclingTexts} delay={200} />
+                <CyclingText sentences={cyclingTexts} delay={1000} />
               </motion.span>
             </h1>
           </motion.div>
